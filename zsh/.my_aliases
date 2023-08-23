@@ -1,0 +1,91 @@
+#!/bin/zsh
+# Aliases...
+alias up='cd ..'
+alias la='ls -a'
+alias ll='ls -l'
+alias lla='ls -la'
+# You'll need node.
+alias secretKey='~/MyShellScripts/generateSecretKey.sh'
+alias makeEx='chmod u+x *.sh'
+alias sourceZsh='source ~/.dotfiles/zsh/.zshrc "$HOME/.dotfiles/zsh/.zshrc"'
+#alias cdJsSnippets='cd ~/.config/lvim/snippets/my-snippets/'
+alias editJsSnippets='lvim ~/.config/lvim/snippets/my-snippets/javascript.json'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias weather='curl wttr.in'
+# Docker aliases
+alias dockerStartService='sudo service docker start'
+alias dockerStopService='sudo service docker stop'
+# stops all docker containers
+alias dockerStopContainer='docker rm -f $(docker ps -a -q)'
+# build docker image. You should provide a tag / name at the end.
+alias dockerBuild='docker build -t '
+# run dockercontainer on port 3000, in the background. You should provide the name of the container from the build step.
+alias dockerRun='docker run -dp 3000:3000 '
+alias dockerBindMount='docker run -it --mount type=bind,src="$(pwd)",target=/src ubuntu bash'
+alias dockerLogs='docker logs -f $(docker ps -q) '
+alias dockerMountBind='docker run -dp 3000:3000 \
+    -w /app --mount type=bind,src="$(pwd)",target=/app \
+    node:18-alpine \
+    sh -c "yarn install && yarn run dev"'
+# Assumes sql container is the only one running
+alias dockerSql='docker exec -it $(docker ps -q) mysql -u root -p'
+# compose and run your docker image based on a .yml docker-compose file called docker-compose.dev.yml
+alias dockerComposeUp='docker compose -f docker-compose.dev.yml up --build'
+# Nukes all images on machine, so use caution here.
+alias deleteAllImages='docker rmi $(docker images -q)'
+alias clr='clear'
+alias aliasPath='cd /home/jonathan/.oh-my-zsh/custom'
+# curl GET for your local endpoint, you need to add the final route element, e.g. '/notes'
+#alias curlGet='curl --request GET --url http://localhost:8000/'
+# curl POST request to add json data to a server
+alias curlPost="curl --request POST \
+  --url http://localhost:8000/test \
+  --header 'content-type: application/json' \
+  --data '{\"msg\": \"testing\"}'"
+# alias grepFunc='functions | grep -B 2 $1'
+# alias=functions | grep -B 1 localhost:8000
+alias versionLinux='lsb_release -a'
+alias mongoStart='sudo mongod --dbpath ~/data/db'
+# alias randomString='node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"'
+#
+alias prismaStudio='npx prisma stuido'
+alias edit=nvim
+# aliases from Elijah Manor's dotfiles
+alias weather="curl -4 wttr.in/derby"
+alias vim="nvim"
+alias zshrc="vim ~/.zshrc"
+alias aliases="vim ~/.dotfiles/zsh/.my_aliases"
+alias functions="vim ~/.dotfiles/zsh/.my_functions"
+alias zshrcs="source ~/.zshrc"
+alias vimrc="vim ~/.config/nvim/lua/config/lazy.lua"
+alias lvimrc="vim /home/jonathan/.local/share/nvim/lazy/LazyVim/lua/lazyvim"
+alias diary="vim ~/diary.txt"
+# /home/jonathan/.local/share/nvim/lazy/LazyVim/lua/lazyvim
+alias vimrcs="source ~/.config/nvim/init.lua"
+alias tmuxrc="vim ~/.tmux.conf.local"
+alias tmuxrcs="tmux source-file ~/.tmux.conf"
+alias beep='echo -e "\a"'
+# taken from https://twitter.com/davidcrespo/status/1492958857479532549
+alias ghpr-oldest='gh pr list | fzf --height 20% --reverse | cut -f1 | xargs gh pr checkout -f'
+alias ghpr-older='gh pr list | fzf-tmux --reverse --preview "gh pr view {1}" | cut -f1 | xargs gh pr checkout -f'
+alias ghpr-old='gh pr list | fzf --reverse --preview-window down,75%,border-horizontal --preview "gh pr view {1}" | cut -f1 | xargs gh pr checkout -f'
+alias ghpr-noworky="GH_FORCE_TTY=100% gh pr list | fzf --ansi --header-lines 3 --preview 'GH_FORCE_TTY=$FZF_PREVIEW_COLUMNS gh pr view {1}' --preview-window down,border-horizontal | awk '{print $1}' | xargs gh pr checkout"
+alias v='fd --type f --hidden --follow --exclude .git | fzf-tmux -p --reverse | xargs nvim'
+local dev_commands=(
+	'tz' 'task' 'watson' 'archey' 'ncdu'
+	'fkill' 'lazydocker' 'ntl' 'ranger'
+	'speed-test' 'serve' 'vtop' 'htop' 'btop' 
+	'lazygit' 'gitui' 'tig' 'tldr'
+)
+alias dev='printf "%s\n" "${dev_commands[@]}" | fzf --height 20% --header Commands | xargs bash'
+alias example='f() { echo Your arg was $1. };f'
+alias python=/usr/bin/python3
+alias lastFile='ls -t | head -n1'
+alias cdtmuxRes='cd ~/.local/share/tmux/resurrect'
+alias cdlazyvim='cd ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim'
+alias cddotnvim='cd /home/jonathan/.dotfiles/nvim/.config/nvim/lua'
+alias cdconfig='cd ~/.config/'
+alias cdsnippets='cd ~/.config/snippets/my-snippets'
+alias explore='explorer.exe .'
+alias nrun='npm run dev'
+alias gs='git status'

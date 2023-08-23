@@ -1,0 +1,110 @@
+{
+  "console log object": {
+    "prefix": "consoleObject",
+    "body": "console.log('${1:object}:', ${1})",
+    "description": "log to the console"
+  },
+  "console log": {
+    "prefix": "console",
+    "body": "console.log(${1})",
+    "description": "log to the console"
+  },
+  "Template string": {
+    "prefix": "templateString",
+    "body": "`\\${${1}}`",
+    "description": "Interpolated template string"
+  },
+  "Placeholder": {
+    "prefix": "placeHolder",
+    "body": "\\${$1}",
+    "description": "The ${} element in template literal"
+  },
+  "test const function": {
+    "prefix": "cftest",
+    "body": [
+      "const ${1:name} = (${2:arguments}) => {",
+      "\t\treturn ${3}",
+      "\t}"
+    ]
+  },
+  "node fs readFile": {
+    "prefix": "readFile",
+    "body": [
+      "fs.readFile(path.join(__dirname, ${1:'your/path'}, ${2:'fileName'}), 'utf8', (err, data) => {",
+      "\t\tif (err) throw err;",
+      "\t\tconsole.log(data)",
+      "})"
+    ]
+  },
+  "node fs writeFile": {
+    "prefix": "writeFile",
+    "body": [
+      "fs.writeFile(path.join(__dirname, ${1:'your/path'}, ${2:'fileName'}), ${3:your text here'}, (err, data) => {",
+      "\t\tif (err) throw err;",
+      "\t\tconsole.log('Write Complete')",
+      "})"
+    ]
+  },
+  "node fs appendFile": {
+    "prefix": "appendFile",
+    "body": [
+      "fs.appendFile(path.join(__dirname, ${1:'your/path'}, ${2:'fileName'}), ${3:your text here'}, (err, data) => {",
+      "\t\tif (err) throw err;",
+      "\t\tconsole.log('Append Complete')",
+      "})"
+    ]
+  },
+  "asyncArrow": {
+    "prefix": "asyncArrow",
+    "body": [
+      "const ${1:varName} = async (${2:someArg}) => {",
+      "\t\t${3://yourCodeHere}",
+      "}"
+    ]
+  },
+  "arrow": {
+    "prefix": "arrow",
+    "body": ["(${1:someArg}) => {", "\t\t${2://yourCodeHere}", "}"]
+  },
+  "date-fns date": {
+    "prefix": "date",
+    "body": ["const dateTime = `${format(new Date(), 'yyyyMMdd\tHH:mm:ss')}`"]
+  },
+  "router imports": {
+    "prefix": "routerImports",
+    "body": [
+      "const express = require('express');",
+      "const router = express.Router();",
+      "const path = require('path');"
+    ]
+  },
+  "logical or": {
+    "prefix": "or",
+    "body": ["||"]
+  },
+  "require statement": {
+    "prefix": "require",
+    "body": ["require('${1:pathHere}')"]
+  },
+  "export default function": {
+    "prefix": "edf",
+    "body": [
+      "export default function ${1:funcName}(${2://args}){",
+      "${3://code here}",
+      "}"
+    ]
+  },
+  "custom hook function": {
+    "prefix": "hookFunc",
+    "body": [
+      "import { useRef, useEffect, useState } from 'react';",
+      "export default function ${1:funcName}(${2://args}){",
+      "${3://code here}",
+      "}"
+    ]
+  },
+  "useEffect hook function": {
+    "prefix": "useEffect",
+    "body": ["useEffect(${1://arrow func here},${2://dependency array here})"]
+  }
+}

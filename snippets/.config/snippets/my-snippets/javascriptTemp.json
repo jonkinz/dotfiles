@@ -1,0 +1,1286 @@
+{
+  // Place your snippets for javascript here. Each snippet is defined under a snippet name and has a prefix, body and
+  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+  // same ids are connected.
+  // Example:
+  "Print to console": {
+    "prefix": ":console",
+    "body": [
+      "console.log($1);"
+    ],
+    "description": "Log output to console"
+  },
+  "React Input": {
+    "prefix": ":formInput",
+    "body": "<input type='text' name='inputText' value={this.state.inputText} onChange={(e) => { this.setState({inputText: e.target.value}) />"
+  },
+  "React Form": {
+    "prefix": ":form",
+    "body": [
+      "<form onSubmit={this.handleSubmit}>\t\t<label>",
+      "\t\t  Name:",
+      "\t\t  <input type=\"text\" value={this.state.value} onChange={this.handleChange} />\t\t</label>",
+      "\t\t  <input type=\"submit\" value=\"Submit\" />",
+      "\t\t</form>"
+    ],
+    "description": "simple form with input for react"
+  },
+  "For Loop": {
+    "prefix": ":for",
+    "body": [
+      "for (var ${index} = 0; ${index} < ${array}.length; ${index}++) {",
+      "\tvar ${element} = ${array}[${index}];",
+      "\t$0",
+      "}"
+    ],
+    "description": "For Loop"
+  },
+  "for of loop": {
+    "prefix": ":forOf",
+    "body": [
+      "\tfor (const elem of $1) {",
+      "\t  console.log(elem);",
+      "\t}"
+    ],
+    "description": "Simple JS for of loop"
+  },
+  "handle change": {
+    "prefix": ":handleChange",
+    "body": [
+      "  const handleChange = (event) => {",
+      "\tconst { name, value } = event.target;",
+      "\tsetFormValue((prevState) => {",
+      "\t  return {",
+      "\t\t...prevState,",
+      "\t\t[name]: value,",
+      "\t  };",
+      "\t});",
+      "  };"
+    ],
+    "description": "Simple handle change function"
+  },
+  "handle submit": {
+    "prefix": ":handleSubmit",
+    "body": [
+      "  const handleSubmit = async (e) => {",
+      "\te.preventDefault();",
+      "\tconst authType = props.signUp ? 'signup' : 'signin';",
+      "\tdispatch(authUser({ authType, formValue }));",
+      "\tif (isSuccess) {",
+      "\t  navigate('/');",
+      "\t}",
+      "\treturn;",
+      "  };"
+    ],
+    "description": "Basic handle submit function"
+  },
+  "Simple Class Component": {
+    "prefix": ":class",
+    "body": [
+      "import React, { Component } from 'react';",
+      "",
+      "class $TM_FILENAME_BASE extends Component {",
+      "\tconstructor(props) {",
+      "\t\tsuper(props);",
+      "\t\tthis.state = {};",
+      "\t};",
+      "\trender() {",
+      "\t\treturn (",
+      "\t\t\t<div>",
+      "\t\t\t\t<h1>",
+      "\t\t\t\t\tSome Text",
+      "\t\t\t\t</h1>",
+      "\t\t\t</div>",
+      "",
+      "\t\t)",
+      "\t}",
+      "",
+      "}",
+      "",
+      "export default  $TM_FILENAME_BASE;"
+    ],
+    "description": "Simpe react class"
+  },
+  "default props": {
+    "prefix": ":defaultProps",
+    "body": [
+      "static defaultProps = {",
+      "",
+      "  }"
+    ],
+    "description": "React default props declaration"
+  },
+  "Prop types": {
+    "prefix": ":propTypes",
+    "body": [
+      "static propTypes = {",
+      "",
+      "  }",
+      ""
+    ],
+    "description": "React propTypes declaration"
+  },
+  "set state": {
+    "prefix": ":this.setState",
+    "body": [
+      "this.setState({ $1: $2 })"
+    ],
+    "description": "react event handler callback arg"
+  },
+  "Simple delete from state method": {
+    "prefix": ":onDelete",
+    "body": [
+      "onDelete(id) {",
+      "\tconst recipes = this.state.recipes.filter(r => r.id !== id);",
+      "\tthis.setState({ recipes })",
+      "  }"
+    ],
+    "description": "Deletes an element from a component's state"
+  },
+  "map function": {
+    "prefix": ":map",
+    "body": [
+      ".map(($1, i) =>{",
+      "\t $2",
+      "   }) "
+    ],
+    "description": "js array map function"
+  },
+  "backward for loop": {
+    "prefix": ":backFor",
+    "body": [
+      "for (let i = array.length - 1; i > 0; i--) {",
+      "$1",
+      "\t"
+    ],
+    "description": "for loop backwards"
+  },
+  "bind function to 'this'": {
+    "prefix": ":this.",
+    "body": [
+      "this.foo = this.foo.bind(this);"
+    ],
+    "description": "bind function in class constructor"
+  },
+  "arrow function": {
+    "prefix": ":() ",
+    "body": [
+      "($1) => {",
+      "\t\t$2",
+      "\t  }"
+    ],
+    "description": "React Arrow Function"
+  },
+  "function assignment": {
+    "prefix": ":funcAssign",
+    "body": [
+      "  const $1= ($2) => {",
+      "\treturn $3;",
+      "  };"
+    ],
+    "description": "Basic function assignment"
+  },
+  "doc ready": {
+    "prefix": ":docReady",
+    "body": [
+      "\\$(document).ready(() => {",
+      "$1",
+      "})"
+    ],
+    "description": "jquery document on ready"
+  },
+  "onClick": {
+    "prefix": ":onClick",
+    "body": [
+      "\t\\$(\"#$1\").on(\"click\", (event) => {",
+      "\t\t$2",
+      "\t});"
+    ],
+    "description": "jquery on click"
+  },
+  "redux store dispatch": {
+    "prefix": ":store.dispatch",
+    "body": [
+      "\t\tstore.dispatch({",
+      "\t\t\ttype: \"$1\"",
+      "\t\t});"
+    ],
+    "description": "simple redux store dispatch call"
+  },
+  "root reducer": {
+    "prefix": "rootReducer",
+    "body": [
+      "function rootReducer(state = initialState, action) {",
+      "\tswitch (action.type) {",
+      "\t\tcase \"INCREMENT\":",
+      "\t\t\tvar newState = { ...state };",
+      "\t\t\tnewState.count++;",
+      "\t\t\treturn newState;",
+      "\t\tcase \"DECREMENT\":",
+      "\t\t\tvar newState = { ...state };",
+      "\t\t\tnewState.count--;",
+      "\t\t\treturn newState;",
+      "\t\tdefault:",
+      "\t\t\treturn state;",
+      "\t}",
+      "}"
+    ],
+    "description": "Simple counter increment reducer for redux"
+  },
+  "form submit": {
+    "prefix": ":onSubmit",
+    "body": [
+      "\t\\$(\"form\").on(\"submit\", (event) => {",
+      "\t\tevent.preventDefault();",
+      "\t});"
+    ],
+    "description": "Standared form on submit in jquery"
+  },
+  "filter id strings": {
+    "prefix": ":filterId",
+    "body": [
+      "\t\t\tlet todos = state.todos.filter(val => val.id !== +action.id);"
+    ],
+    "description": "Filter a given todo out of state based on a string 'id'"
+  },
+  "redux action creator": {
+    "prefix": ":actionCreator",
+    "body": [
+      "export const ADD_TODO = \"ADD_TODO\";",
+      "export const REMOVE_TODO = \"REMOVE_TODO\";",
+      "",
+      "export function addTodo(task){",
+      "  return {",
+      "\ttype: ADD_TODO,",
+      "\ttask",
+      "  }",
+      "}",
+      "",
+      "export function removeTodo(id) {",
+      "  return {",
+      "\ttype: REMOVE_TODO, ",
+      "\tid",
+      "  }",
+      "}"
+    ],
+    "description": "Simple action creator for a todo list"
+  },
+  "redux devtools extension string": {
+    "prefix": ":reduxDevTools",
+    "body": [
+      "window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__("
+    ],
+    "description": "createStore 2nd arg so you can use the redux dev tools"
+  },
+  "redux root reducer": {
+    "prefix": ":rootReducer",
+    "body": [
+      "export default function rootReducer(state = initialState, action) {",
+      "\tswitch (action.type) {",
+      "\t\tcase ADD_TODO:",
+      "\t\t\tvar newState = { ...state };",
+      "\t\t\tnewState.id++;",
+      "\t\t\treturn {",
+      "\t\t\t\t...newState,",
+      "\t\t\t\ttodos: [...newState.todos, { task: action.task, id: newState.id }]",
+      "\t\t\t};",
+      "\t\tcase REMOVE_TODO:",
+      "\t\t\tlet todos = state.todos.filter(val => val.id !== action.id);",
+      "\t\t\treturn { ...state, todos };",
+      "\t\tdefault:",
+      "\t\t\treturn state;",
+      "\t}",
+      "}"
+    ],
+    "description": "Simple ADD / REMOVE todo root reducer"
+  },
+  "react class constructor": {
+    "prefix": ":constructor",
+    "body": [
+      "  constructor(props){",
+      "\tsuper(props);",
+      "\t$1",
+      "  }"
+    ],
+    "description": "Basic react class constructor"
+  },
+  "create redux store": {
+    "prefix": ":createStore",
+    "body": [
+      "const store = createStore(",
+      "  rootReducer,",
+      "  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()",
+      ");"
+    ],
+    "description": "Create a basic redux store"
+  },
+  "Basic react redux with router app structure": {
+    "prefix": ":App",
+    "body": [
+      "  <Provider store={store}>",
+      "\t<BrowserRouter>",
+      "\t  <App />",
+      "\t</BrowserRouter>",
+      "  </Provider>,"
+    ],
+    "description": "Top level, index.js / ReactDom.render code, creates a provider and a router element."
+  },
+  "React Dom dot render": {
+    "prefix": ":ReactDom.render",
+    "body": [
+      "ReactDOM.render(",
+      "\t$1",
+      "\tdocument.getElementById('root')",
+      ");"
+    ],
+    "description": "Basic render react to the dom boiler-plate"
+  },
+  "root reducer's initial state": {
+    "prefix": ":initialState",
+    "body": [
+      "const initialState = {",
+      "\ttodos: [],",
+      "\tid: 0",
+      "};"
+    ],
+    "description": "Initial state for todo list reducer function"
+  },
+  "React func component": {
+    "prefix": ":functionComponent",
+    "body": [
+      "import React from 'react';",
+      "",
+      "const $TM_FILENAME_BASE = (props) => {",
+      "  return <div> $TM_FILENAME_BASE</div>;",
+      "};",
+      "",
+      "export default $TM_FILENAME_BASE;",
+      ""
+    ],
+    "description": "Simple React component"
+  },
+  "React form to add a todo": {
+    "prefix": ":form",
+    "body": [
+      "\t\t\t// Simple add todo react form",
+      "\t\t\t<div>",
+      "\t\t\t\t<form onSubmit={this.handleSubmit}>",
+      "\t\t\t\t\t<label htmlFor='task'>Task:</label>",
+      "\t\t\t\t\t<input type='text' name='task' id='task' onChange={this.handleChange} />",
+      "\t\t\t\t\t<button>Add a todo!</button>",
+      "\t\t\t\t</form>",
+      "\t\t\t\t<ul id='todos'>{todos}</ul>",
+      "\t\t\t</div>"
+    ],
+    "description": "Basic react form"
+  },
+  "redux dispatch": {
+    "prefix": ":dispatch",
+    "body": [
+      "\t   this.props.dispatch({",
+      "\t\t   type: 'SOME_ACTION_HERE',",
+      "\t\t   data: someTypeOfData",
+      "\t   }) "
+    ],
+    "description": "Basic redux dispatch call"
+  },
+  "Basic index.js / node server": {
+    "prefix": ":nodeServer",
+    "body": [
+      "require('dotenv').config();",
+      "const express = require('express');",
+      "const app = express();",
+      "const cors = require('cors');",
+      "const bodyParser = require('body-parser');",
+      "",
+      "const PORT = 8081;",
+      "",
+      "app.use(cors());",
+      "app.use(bodyParser.json());",
+      "",
+      "// routes go here",
+      "",
+      "app.use((req, res, next) => {",
+      "\tlet err = new Error('Not Found');",
+      "\terr.status = 404;",
+      "\tnext(err);",
+      "});",
+      "",
+      "app.listen(PORT, () => {",
+      "\tconsole.log(`Server is starting on port ${PORT}`);",
+      "});"
+    ],
+    "description": "Very simple Node server"
+  },
+  "Simple JS function": {
+    "prefix": ":function",
+    "body": [
+      " function $1($2){",
+      "\t$3 ",
+      " }"
+    ],
+    "description": "A simple JavaScript function"
+  },
+  "Arrow function": {
+    "prefix": ":arrow",
+    "body": [
+      " ($1) => {",
+      "\t$2 ",
+      " }"
+    ],
+    "description": "A simple JavaScript function"
+  },
+  "Express error handler function": {
+    "prefix": ":errorHandler",
+    "body": [
+      "function errorHandler(error, request, response, next) {",
+      "\treturn response.status(error.status || 500).json({",
+      "\t\terror: {",
+      "\t\t\tmessage: error.message || 'Oops! Something went wrong'",
+      "\t\t}",
+      "\t});",
+      "}",
+      "",
+      "module.exports = errorHandler;"
+    ],
+    "description": "Basic Express server error handler"
+  },
+  "mongoConnect": {
+    "prefix": ":mongoConnect",
+    "body": [
+      "const mongoose = require('mongoose');",
+      "mongoose.set('debug', true);",
+      "mongoose.Promise = Promise;",
+      "",
+      "mongoose.connect('mongodb://localhost:27017/myDbNameHere', {",
+      "\tkeepAlive: true,",
+      "\tuseMongoClient: true",
+      "}); "
+    ],
+    "description": "Basic code to connect to a mongo db"
+  },
+  "Basic Mongoose user schema": {
+    "prefix": ":mongooseSchema",
+    "body": [
+      "const mongoose = require('mongoose');",
+      "const bcrypt = require('bcrypt');",
+      "",
+      "const userSchema = new mongoose.Schema({",
+      "\temail: {",
+      "\t\ttype: String,",
+      "\t\trequired: true,",
+      "\t\tunique: true",
+      "\t},",
+      "\tusername: {",
+      "\t\ttype: String,",
+      "\t\trequired: true,",
+      "\t\tunique: true",
+      "\t},",
+      "\tpassword: {",
+      "\t\ttype: String,",
+      "\t\trequired: true",
+      "\t},",
+      "\tprofileImageUrl: {",
+      "\t\ttype: String",
+      "\t}",
+      "});",
+      "//put :hashPassword hook here",
+      "$1",
+      "//put :comparePassword function here",
+      "$2",
+      "const User = mongoose.model('User', userSchema);",
+      "",
+      "module.exports = User;"
+    ],
+    "description": "Simple user schema for mongoose"
+  },
+  "Message schema for mongoose": {
+    "prefix": ":messageSchema",
+    "body": [
+      "const mongoose = require(\"mongoose\");",
+      "const User = require(\"./user\");",
+      "",
+      "const messageSchema = new mongoose.Schema(",
+      "  {",
+      "\ttext: {",
+      "\t  type: String,",
+      "\t  required: true,",
+      "\t  maxLength: 160",
+      "\t},",
+      "\tuser: {",
+      "\t  type: mongoose.Schema.Types.ObjectId,",
+      "\t  ref: \"User\"",
+      "\t}",
+      "  },",
+      "  {",
+      "\ttimestamps: true",
+      "  }",
+      ");",
+      "",
+      "messageSchema.pre(\"remove\", async function(next) {",
+      "  try {",
+      "\t// find a user",
+      "\tlet user = await User.findById(this.user);",
+      "\t// remove the id of the message from their messages list",
+      "\tuser.messages.remove(this.id);",
+      "\t// save that user",
+      "\tawait user.save();",
+      "\t// return next",
+      "\treturn next();",
+      "  } catch (err) {",
+      "\treturn next(err);",
+      "  }",
+      "});",
+      "",
+      "const Message = mongoose.model(\"Message\", messageSchema);",
+      "module.exports = Message;",
+      ""
+    ],
+    "description": "A message for a user on a Twitter clone"
+  },
+  "pre save hook for user schema": {
+    "prefix": ":hashPassword",
+    "body": [
+      "userSchema.pre('save', async function(next) {",
+      "\ttry {",
+      "\t\tif (!this.isModified('password')) {",
+      "\t\t\treturn next();",
+      "\t\t}",
+      "\t\tlet hashedPassword = await bcrypt.hash(this.password, 10);",
+      "\t\tthis.password = hashedPassword;",
+      "\t\treturn next();",
+      "\t} catch (err) {",
+      "\t\treturn next(err);",
+      "\t}",
+      "});"
+    ],
+    "description": "Make sure to encrypt and salt password before user is saved"
+  },
+  "Compare password function": {
+    "prefix": ":comparePassword",
+    "body": [
+      "userSchema.method.comparePassword = async function(candidatePassword,  next){",
+      "\ttry{",
+      "\t\tlet isMatch = await bcrypt.compare(candidatePassword, this.password);",
+      "\t\treturn isMatch;",
+      "\t} catch(err){",
+      "\t   return next(err); ",
+      "\t}",
+      "}"
+    ],
+    "description": "Simple password checker"
+  },
+  "exported function": {
+    "prefix": ":exportsFunction",
+    "body": [
+      "exports.fooBar$1 = async function(req, res, next) {",
+      "$2",
+      "}"
+    ],
+    "description": "Simple 'exports.someFunc' function"
+  },
+  "Try catch block": {
+    "prefix": ":tryCatch",
+    "body": [
+      "\ttry{",
+      "\t\t$1",
+      "\t}",
+      "\tcatch(err){",
+      "\t\t$2return next(err)",
+      "\t}"
+    ],
+    "description": "Simple try catch block"
+  },
+  "Express signup function": {
+    "prefix": ":signup",
+    "body": [
+      "exports.signup = async function(req, res, next) {",
+      "\ttry {",
+      "\t\t// create a user,",
+      "\t\tlet user = await db.User.create(req.body);",
+      "\t\tlet { id, username, profileImageUrl } = user;",
+      "\t\tlet token = jwt.sign(",
+      "\t\t\t{",
+      "\t\t\t\tid,",
+      "\t\t\t\tusername,",
+      "\t\t\t\tprofileImageUrl",
+      "\t\t\t},",
+      "\t\t\tprocess.env.SECRET_KEY",
+      "\t\t);",
+      "\t\treturn res.status(200).json({",
+      "\t\t\tid,",
+      "\t\t\tusername,",
+      "\t\t\tprofileImageUrl,",
+      "\t\t\ttoken",
+      "\t\t});",
+      "\t} catch (err) {",
+      "\t\t//if validation fails",
+      "\t\tif (err.code === 11000) {",
+      "\t\t\terr.message = 'Sorry, that username and/or email is taken';",
+      "\t\t}",
+      "\t\treturn next({",
+      "\t\t\tstatus: 400,",
+      "\t\t\tmessage: err.message",
+      "\t\t});",
+      "\t}",
+      "};"
+    ],
+    "description": "Simple user signup function"
+  },
+  "Server side auth functions": {
+    "prefix": ":nodeAuth",
+    "body": [
+      "onst db = require('../models');",
+      "const jwt = require('jsonwebtoken');",
+      "",
+      "exports.signin = async function (req, res, next) {",
+      "  // finding a user",
+      "  try {",
+      "\tlet user = await db.User.findOne({",
+      "\t  email: req.body.email,",
+      "\t});",
+      "\tlet { id, username, profileImageUrl } = user;",
+      "\tlet isMatch = await user.comparePassword(req.body.password);",
+      "\tif (isMatch) {",
+      "\t  let token = jwt.sign(",
+      "\t\t{",
+      "\t\t  id,",
+      "\t\t  username,",
+      "\t\t  profileImageUrl,",
+      "\t\t},",
+      "\t\tprocess.env.SECRET_KEY",
+      "\t  );",
+      "\t  return res.status(200).json({",
+      "\t\tid,",
+      "\t\tusername,",
+      "\t\tprofileImageUrl,",
+      "\t\ttoken,",
+      "\t  });",
+      "\t} else {",
+      "\t  return next({",
+      "\t\tstatus: 400,",
+      "\t\tmessage: 'Invalid Email/Password.',",
+      "\t  });",
+      "\t}",
+      "  } catch (e) {",
+      "\treturn next({ status: 400, message: 'Invalid Email/Password.' });",
+      "  }",
+      "};",
+      "",
+      "exports.signup = async function (req, res, next) {",
+      "  try {",
+      "\tlet user = await db.User.create(req.body);",
+      "\tlet { id, username, profileImageUrl } = user;",
+      "\tlet token = jwt.sign(",
+      "\t  {",
+      "\t\tid,",
+      "\t\tusername,",
+      "\t\tprofileImageUrl,",
+      "\t  },",
+      "\t  process.env.SECRET_KEY",
+      "\t);",
+      "\treturn res.status(200).json({",
+      "\t  id,",
+      "\t  username,",
+      "\t  profileImageUrl,",
+      "\t  token,",
+      "\t});",
+      "  } catch (err) {",
+      "\tif (err.code === 11000) {",
+      "\t  err.message = 'Sorry, that username and/or email is taken';",
+      "\t}",
+      "\treturn next({",
+      "\t  status: 400,",
+      "\t  message: err.message,",
+      "\t});",
+      "  }",
+      "};",
+      ""
+    ],
+    "description": "Signin and Signup functions for your node server"
+  },
+  "Mongoose schema object id array": {
+    "prefix": ":mongooseObjectIds",
+    "body": [
+      "messages$1 : [",
+      "\t{",
+      "\t\ttype: mongoose.Schema.Types.ObjectId,",
+      "\t\tref: 'Message$2'",
+      "\t}",
+      "]"
+    ],
+    "description": "List of object ids for mongoose schema object"
+  },
+  "Simple mongoose 'pre' hook function": {
+    "prefix": ":mongoosePreHook",
+    "body": [
+      "fooBar$1.pre('someAction$2', async function(next) {",
+      "\ttry {",
+      "\t\t// Some mongoose db op here, e.g.",
+      "\t\t//$3 let foo = await Foo.findById(this.fooId);",
+      "\t\t// Do something with your schema object",
+      "\t\t// foo.bar.remove(this.fooId);",
+      "\t\t// commit your change:",
+      "\t\t// await foo.save();",
+      "\t\t// call next",
+      "\t\treturn next();",
+      "\t} catch (err) {",
+      "\t\treturn next(err);",
+      "\t}",
+      "});"
+    ],
+    "description": "Make sure to do something before some action on this db object"
+  },
+  "Mongoose create thing handler": {
+    "prefix": ":mongooseCreateThing",
+    "body": [
+      "// Basic create thing handler. Based on warbler create message",
+      "// code. Creates a message, finds the user who created it, adds",
+      "// the message as a ref on the user's message list, returns an",
+      "// object which is the message plus the user's name and image.",
+      "exports.createFoo$1 = async function(req, res, next) {",
+      "\ttry {",
+      "\t\t$2",
+      "\t\t// Create your thing on the DB",
+      "\t\tlet bar = await db.Bar.create({",
+      "\t\t\tsomeProp: req.body.someProp,",
+      "\t\t\tsomeProp2: req.body.someProp2",
+      "\t\t});",
+      "\t\t// Find another thing, e.g. a User",
+      "\t\tlet foundThing = await db.Thing.findById(req.params.id);",
+      "\t\t// Add the thing (e.g. message) to your other thing (e.g. User)",
+      "\t\tfoundThing.someList.push(bar.id);",
+      "\t\t// Save that thing!",
+      "\t\tawait foundThing.save();",
+      "\t\t// Now find your saved first thing (e.g. a Message) and give it",
+      "\t\t// some properties from you 'Thing', or User",
+      "\t\tlet foundBar = await db.Bar.findById(bar._id).populate('thing', {",
+      "\t\t\tsomeProp3: true,",
+      "\t\t\tsomeProp4: true",
+      "\t\t});",
+      "\t\treturn res.status(200).json(someObjectHere$3);",
+      "\t} catch (err) {",
+      "\t\treturn next(err);",
+      "\t}",
+      "};",
+      ""
+    ],
+    "description": "Template for creating a thing that belongs to another thing"
+  },
+  "CRUD handler": {
+    "prefix": ":crudHandler",
+    "body": [
+      "const db = require(\"../models\");",
+      "",
+      "exports.createMessage = async function(req, res, next) {",
+      "  try {",
+      "\tlet message = await db.Message.create({",
+      "\t  text: req.body.text,",
+      "\t  user: req.params.id",
+      "\t});",
+      "\tlet foundUser = await db.User.findById(req.params.id);",
+      "\tfoundUser.messages.push(message.id);",
+      "\tawait foundUser.save();",
+      "\tlet foundMessage = await db.Message.findById(message._id).populate(\"user\", {",
+      "\t  username: true,",
+      "\t  profileImageUrl: true",
+      "\t});",
+      "\treturn res.status(200).json(foundMessage);",
+      "  } catch (err) {",
+      "\treturn next(err);",
+      "  }",
+      "};",
+      "",
+      "// GET - /api/users/:id/messages/:message_id",
+      "exports.getMessage = async function(req, res, next) {",
+      "  try {",
+      "\tlet message = await db.Message.find(req.params.message_id);",
+      "\treturn res.status(200).json(message);",
+      "  } catch (err) {",
+      "\treturn next(err);",
+      "  }",
+      "};",
+      "",
+      "// DELETE /api/users/:id/messages/:message_id",
+      "exports.deleteMessage = async function(req, res, next) {",
+      "  try {",
+      "\tlet foundMessage = await db.Message.findById(req.params.message_id);",
+      "\tawait foundMessage.remove();",
+      "",
+      "\treturn res.status(200).json(foundMessage);",
+      "  } catch (err) {",
+      "\treturn next(err);",
+      "  }",
+      "};",
+      ""
+    ],
+    "description": "Basic create, get and delete code. No edit yet."
+  },
+  "database model import": {
+    "prefix": ":dbModelImport",
+    "body": [
+      "// Basic database import. Assumes you have an index.js file",
+      "// in your models directory with the appropriate exports.",
+      "const db = require('../models');"
+    ],
+    "description": "Imports User, Message, Foo etc from your Mongoose schemas"
+  },
+  "get auth token": {
+    "prefix": ":getAuthToken",
+    "body": [
+      "\tconst token = req.headers.authorization.split(' ')[1]; // Bearer"
+    ],
+    "description": "Simple assignment to get the jwt token from the 'auth' part of your header"
+  },
+  "Verify jwt": {
+    "prefix": ":jwtVerify",
+    "body": [
+      "jwt.verify(token, process.env.SECRET_KEY, function(err, decoded) {",
+      "\tif (decoded) {",
+      "\t\treturn next();",
+      "\t} else {",
+      "\t\treturn next({",
+      "\t\t\tstatus: 401,",
+      "\t\t\tmessage: 'Please log in first'",
+      "\t\t});",
+      "\t}",
+      "});"
+    ],
+    "description": "Verifies a jwt auth token using your .env secret key"
+  },
+  "Simple router": {
+    "prefix": ":authRoutes",
+    "body": [
+      "const express = require('express');",
+      "const router = express.Router();",
+      "$1const { signup, signin } = require('../handlers/auth');",
+      "",
+      "router.post('/signup', signup);",
+      "router.post('/signin', signin);",
+      "",
+      "module.exports = router;"
+    ],
+    "description": "Simple express router"
+  },
+  "async req res next function": {
+    "prefix": ":reqResNext",
+    "body": [
+      "async function(req, res, next) {$1}"
+    ],
+    "description": "Basic express anonymous function"
+  },
+  "Mongoose get...": {
+    "prefix": ":mongooseFind",
+    "body": [
+      "let messages = await db.Messages.find().sort({ createdAt: 'desc' }).populate('user', {",
+      "\tusername: true,",
+      "\tprofileImageUrl: true",
+      "});"
+    ],
+    "description": "Simple mongoose find, sort and populate"
+  },
+  "Basic success response object": {
+    "prefix": ":resStatus200",
+    "body": [
+      "return res.status(200).json(messages);"
+    ],
+    "description": "What to return when you're query has been a huge success!"
+  },
+  "client proxy config": {
+    "prefix": ":proxy",
+    "body": [
+      "\"proxy\": \"http://localhost:YOUR_PORT_HERE\""
+    ],
+    "description": "Configure client to use server's PORT number"
+  },
+  "basic reducer": {
+    "prefix": ":reducer",
+    "body": [
+      "// basic reducer pattern :",
+      "export default (state= $1{someObjectHere:foo}, action) => {",
+      "\tswitch (action.type) {",
+      "\t\tcase ACTION_TYPE_HERE$2:",
+      "\t\t\treturn {",
+      "\t\t\t\tfoo: 'bar',",
+      "\t\t\t\tbar: 'foo'",
+      "\t\t\t};",
+      "\t\tdefault:",
+      "\t\t\treturn state;",
+      "\t}",
+      "}"
+    ],
+    "description": "Pattern for reducer function"
+  },
+  "combine reducer": {
+    "prefix": ":combineReducers",
+    "body": [
+      "const rootReducer = combineReducers({",
+      "\tsomeThing$1,",
+      "\tfooBar$2",
+      "});"
+    ],
+    "description": "Create root reducer using combine reducers function"
+  },
+  "configure store with middleware and compose": {
+    "prefix": ":configureStore",
+    "body": [
+      "import rootReducer from './reducers';",
+      "import { createStore, applyMiddleware, compose } from 'redux';",
+      "",
+      "export function configureStore() {",
+      "\tconst store = createStore(rootReducer, compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : (f) => f));",
+      "\treturn store;",
+      "}",
+      ""
+    ],
+    "description": "Assumes you have created your root reducer"
+  },
+  "create store with rootReducer": {
+    "prefix": ":createStore",
+    "body": [
+      "\tconst store = createStore(rootReducer, compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : (f) => f));"
+    ],
+    "description": "Create store shortcut"
+  },
+  "Import react": {
+    "prefix": ":impReact",
+    "body": [
+      "import React, { Component } from 'react';"
+    ],
+    "description": "import react statement"
+  },
+  "import Provider from react redux": {
+    "prefix": ":impProv",
+    "body": [
+      "import {Provider} from 'react-redux';"
+    ],
+    "description": "Imports redux provider component"
+  },
+  "map state to props": {
+    "prefix": ":mapState",
+    "body": [
+      " function mapStateToProps(state){",
+      "\t// return some state object, e.g. currentUser: state.currentUser",
+      "\treturn {",
+      "\t\t$1 : $2",
+      "\t} ",
+      " }"
+    ],
+    "description": "Basic redux map state to props function"
+  },
+  "default export for redux": {
+    "prefix": ":reduxExport",
+    "body": [
+      "// Simple export for redux class. Your component goes in 2nd set of params.",
+      "export default connect(mapStateToProps, null)($1)"
+    ],
+    "description": "Basic redux export"
+  },
+  "bootstrap nav": {
+    "prefix": ":bootstrapNav",
+    "body": [
+      "\t  // Simple bootstrap nav",
+      "\t  <nav className='navbar navbar-expand'>",
+      "\t\t<div className='container-fluid'>",
+      "\t\t  <Link to='/' className='navbar-brand'>",
+      "\t\t\t<img src='' alt='Warbler Home' />",
+      "\t\t  </Link>",
+      "\t\t</div>",
+      "\t\t<ul className='nav navbar-nav navbar-right'>",
+      "\t\t  <li>",
+      "\t\t\t<link rel='stylesheet' href='' to='/signup'>",
+      "\t\t\t  Sign up",
+      "\t\t\t</Link>",
+      "\t\t  </li>",
+      "\t\t  <li>",
+      "\t\t\t<Link rel='stylesheet' href='' to='/signin'>",
+      "\t\t\t  Sign in",
+      "\t\t\t</Link>",
+      "\t\t  </li>",
+      "\t\t</ul>",
+      "\t  </nav>"
+    ],
+    "description": "Basic navbar for bootstrap"
+  },
+  "Basic functional component": {
+    "prefix": ":funcComp",
+    "body": [
+      "import React, { Component } from 'react';",
+      "",
+      "const $TM_FILENAME_BASE = (props) => {",
+      "  return (",
+      "\t<div className='container'>",
+      "\t  <div></div>",
+      "\t</div>",
+      "  );",
+      "};",
+      "export default $TM_FILENAME_BASE"
+    ],
+    "description": "Template for simple component"
+  },
+  "React Router example": {
+    "prefix": ":routes",
+    "body": [
+      "<div className='container'>",
+      "  <Routes>",
+      "\t<Route path='/' element={<Homepage {...props} />}></Route>",
+      "\t<Route path='/signin' element={<AuthForm buttonText='Log in' heading='Welcome Back' {...props} />}></Route>",
+      "\t<Route path='/signup' element={<AuthForm buttonText='Sign Up' heading='Join Warbler Today!' {...props} />}></Route>",
+      "  </Routes>",
+      "</div>"
+    ],
+    "description": "Simple react router example"
+  },
+  "Import routes etc from react router dom": {
+    "prefix": ":impRoutes",
+    "body": [
+      "import { Routes, Route, useLocation, useNavigate, useParams, Redirect } from 'react-router-dom';"
+    ],
+    "description": "Basic import for your react routing"
+  },
+  "with router hack for v6 of react router": {
+    "prefix": ":withRouter",
+    "body": [
+      "function withRouter(Component) {",
+      "  function ComponentWithRouterProp(props) {",
+      "\tlet location = useLocation();",
+      "\tlet navigate = useNavigate();",
+      "\tlet params = useParams();",
+      "\treturn <Component {...props} router={{ location, navigate, params }} />;",
+      "  }",
+      "  return ComponentWithRouterProp;",
+      "}"
+    ],
+    "description": "Adds routing hooks to your component."
+  },
+  "Basic auth render jsx": {
+    "prefix": ":authRender",
+    "body": [
+      "\tconst { email, username, password, profileImageUrl } = this.state;",
+      "\tconst { heading, buttonText, signUp } = this.props;",
+      "\treturn (",
+      "\t  <div>",
+      "\t\t<div className='row justify-content-md-center text-center'>",
+      "\t\t  <div className='col-md-6'>",
+      "\t\t\t<form onSubmit={this.handleSubmit}>",
+      "\t\t\t  <h2>{heading}</h2>",
+      "",
+      "\t\t\t  <label htmlFor='email'>E-mail</label>",
+      "\t\t\t  <input autoComplete='off' className='form-control' id='email' name='email' onChange={this.handleChange} type='text' value={email} />",
+      "\t\t\t  <label htmlFor='password'>Password</label>",
+      "\t\t\t  <input autoComplete='off' className='form-control' id='password' name='password' onChange={this.handleChange} type='password' value={password} />",
+      "\t\t\t  {signUp && (",
+      "\t\t\t\t<div>",
+      "\t\t\t\t  <label htmlFor='username'>Username</label>",
+      "\t\t\t\t  <input autoComplete='off' className='form-control' id='username' name='username' onChange={this.handleChange} type='text' value={username} />",
+      "\t\t\t\t  <label htmlFor='image-url'>Image URL</label>",
+      "\t\t\t\t  <input autoComplete='off' className='form-control' id='image-url' name='profileImageUrl' onChange={this.handleChange} type='text' value={profileImageUrl} />",
+      "\t\t\t\t</div>",
+      "\t\t\t  )}",
+      "\t\t\t  <button type='submit' className='btn btn-primary btn-block btn-lg'>",
+      "\t\t\t\t{buttonText}",
+      "\t\t\t  </button>",
+      "\t\t\t</form>",
+      "\t\t  </div>",
+      "\t\t</div>",
+      "\t  </div>",
+      "\t);",
+      "\t}"
+    ],
+    "description": "Creates a boostrap authform in JSX"
+  },
+  "axios api call service": {
+    "prefix": ":apiCall",
+    "body": [
+      "import axios from \"axios\";",
+      "",
+      "export function apiCall(method, path, data) {",
+      "  return new Promise((resolve, reject) => {",
+      "\treturn axios[method](path, data)",
+      "\t  .then(res => {",
+      "\t\treturn resolve(res.data);",
+      "\t  })",
+      "\t  .catch(err => {",
+      "\t\treturn reject(err.response.data.error);",
+      "\t  });",
+      "  });",
+      ""
+    ],
+    "description": "Service function to simplify api calls"
+  },
+  "useEffect hook example": {
+    "prefix": ":useEffect",
+    "body": [
+      "  // useEffect example from react docs.",
+      "  useEffect(() => {",
+      "\tfunction handleStatusChange(status) {",
+      "\t  setIsOnline(status.isOnline);",
+      "\t}",
+      "\tChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);",
+      "\t// Specify how to clean up after this effect:",
+      "\treturn function cleanup() {",
+      "\t  ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);",
+      "\t};",
+      "\t// Add state variables that you want to watch in the dependencies array",
+      "  }, [someStateHere]);"
+    ],
+    "description": "Basic useEffect from React docs"
+  },
+  "Custom hook example": {
+    "prefix": ":hook",
+    "body": [
+      "import { useState, useEffect } from 'react';",
+      "",
+      "function useFriendStatus(friendID) {",
+      "  const [isOnline, setIsOnline] = useState(null);",
+      "",
+      "  useEffect(() => {",
+      "\tfunction handleStatusChange(status) {",
+      "\t  setIsOnline(status.isOnline);",
+      "\t}",
+      "",
+      "\tChatAPI.subscribeToFriendStatus(friendID, handleStatusChange);",
+      "\treturn () => {",
+      "\t  ChatAPI.unsubscribeFromFriendStatus(friendID, handleStatusChange);",
+      "\t};",
+      "  });",
+      "",
+      "  return isOnline;",
+      "}"
+    ],
+    "description": "Example of hook function from React docs"
+  },
+  "redux with hooks": {
+    "prefix": ":reduxComponent",
+    "body": [
+      "import React, { useEffect } from 'react';",
+      "import { useSelector, useDispatch, shallowEqual } from 'react-redux';",
+      "import { fetchMessages, removeMessage } from '../store/actions/messages';",
+      "import MessageItem from '../components/MessageItem';",
+      "",
+      "const MessageList2 = (props) => {",
+      "  const dispatch = useDispatch();",
+      "",
+      "  useEffect(() => {",
+      "\tdispatch(fetchMessages());",
+      "  }, [dispatch]);",
+      "",
+      "  const { messages, currentUser } = useSelector(",
+      "\t(state) => ({",
+      "\t  currentUser: state.currentUser.user.id,",
+      "\t  messages: state.messages,",
+      "\t}),",
+      "\tshallowEqual",
+      "  );",
+      "",
+      "  let messageList = messages.map((m) => (",
+      "\t<MessageItem",
+      "\t  key={m._id}",
+      "\t  date={m.createAt}",
+      "\t  text={m.text}",
+      "\t  username={m.user.username}",
+      "\t  profileImageUrl={m.user.profileImageUrl}",
+      "\t  removeMessage={() => dispatch(removeMessage(m.user._id, m._id))}",
+      "\t  isCorrectUser={currentUser === m.user._id}",
+      "\t/>",
+      "  ));",
+      "",
+      "  return (",
+      "\t<div className='row col-sm-8'>",
+      "\t  <div className='offset-1 col-sm-10'>",
+      "\t\t<ul className='list-group' id='messages'>",
+      "\t\t  {messageList}",
+      "\t\t</ul>",
+      "\t  </div>",
+      "\t</div>",
+      "  );",
+      "};",
+      "",
+      "export default MessageList2;",
+      ""
+    ],
+    "description": "Simple example a redux component using hooks"
+  },
+  "Redux component": {
+    "prefix": ":reduxComp",
+    "body": [
+      "import React, { Component } from \"react\";",
+      "import { Link } from \"react-router-dom\";",
+      "import { useSelector, useDispatch, shallowEqual } from 'react-redux';",
+      "",
+      "const $TM_FILENAME_BASE = (props) => {",
+      "",
+      "  const dispatch = useDispatch();",
+      "  const { foo, bar } = useSelector(",
+      "\t(state) => ({",
+      "\t  foo: state.foo,",
+      "\t  bar: state.bar,",
+      "\t})",
+      "  );",
+      "  return (",
+      "\t<div>I am a basic redux component!</div>",
+      "  );",
+      "};",
+      "export default $TM_FILENAME_BASE;"
+    ],
+    "description": "Basic redux component"
+  },
+  "Redux slice": {
+    "prefix": ":reduxSlice",
+    "body": [
+      "import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';",
+      "import { apiCall } from '../../services/api';",
+      "",
+      "const initialState = { value: 0 }",
+      "",
+      "const $TM_FILENAME_BASE = createSlice({",
+      "  name: 'counter',",
+      "  initialState,",
+      "  reducers: {",
+      "\tincrement(state) {",
+      "\t  state.value++",
+      "\t},",
+      "\tdecrement(state) {",
+      "\t  state.value--",
+      "\t},",
+      "\tincrementByAmount(state, action) {",
+      "\t  state.value += action.payload",
+      "\t},",
+      "  },",
+      "})",
+      "",
+      "export const { increment, decrement, incrementByAmount } = $TM_FILENAME_BASE.actions",
+      "export default $TM_FILENAME_BASE.reducer"
+    ],
+    "description": "Basic redux slice"
+  },
+  "import redux hooks": {
+    "prefix": ":impReduxHooks",
+    "body": [
+      "import { useSelector, useDispatch, shallowEqual } from 'react-redux';"
+    ]
+  },
+  "declare redux dispatch function and state vars": {
+    "prefix": ":reduxState",
+    "body": [
+      "  const dispatch = useDispatch();",
+      "",
+      "  const { messages, currentUser, errors } = useSelector(",
+      "\t(state) => ({",
+      "\t  currentUser: state.currentUser,",
+      "\t  messages: state.messages,",
+      "\t  errors: state.errors,",
+      "\t}),",
+      "\tshallowEqual",
+      "  );"
+    ]
+  },
+  "use state example": {
+    "prefix": ":useState",
+    "body": [
+      "  const [message, setMessage] = useState(\"\");"
+    ],
+    "description": "Simple 'set message' use state demo"
+  }
+}
