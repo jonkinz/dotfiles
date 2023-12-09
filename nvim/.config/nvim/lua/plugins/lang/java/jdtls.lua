@@ -1,3 +1,4 @@
+-- `require("lazyvim.util").on_attach` is deprecated. Please use `require("lazyvim.util").lsp.on_attach` instead
 if true then
   return {}
 end
@@ -11,7 +12,7 @@ return {
           vim.api.nvim_create_autocmd("FileType", {
             pattern = "java",
             callback = function()
-              require("lazyvim.util").on_attach(function(_, buffer)
+              require("lazyvim.util").lsp.on_attach(function(_, buffer)
                 vim.keymap.set(
                   "n",
                   "<leader>di",

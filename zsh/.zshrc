@@ -91,10 +91,10 @@ plug "esc/conda-zsh-completion"
 autoload -Uz compinit
 compinit
 
-source "$HOME/.dotfiles/zsh/.my_aliases"
-source "$HOME/.dotfiles/zsh/.my_functions"
-# plug "$HOME/.dotfiles/zsh/.my_aliases"
-# plug "$HOME/.dotfiles/zsh/.my_functions"
+source "$HOME/dotfiles/zsh/.my_aliases"
+source "$HOME/dotfiles/zsh/.my_functions"
+# plug "$HOME/dotfiles/zsh/.my_aliases"
+# plug "$HOME/dotfiles/zsh/.my_functions"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
